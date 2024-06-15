@@ -393,15 +393,60 @@ function showStars(rows) {
   }
 }
 
-showPrime(20);
+showPrime(15);
 
 function showPrime(limit) {
-  for (let number = 2; <= limit; number++) {
-    
-    let isPrime = true;  
-    for (let factor = 2; factor < number; factor++) {
-      if (number % factor === 0)
-        isPrime = false;
-    }
-  }
+  for (let number = 2; number <= limit; number++)
+    if (isPrime(number)) console.log(number);
 }
+function isPrime(number) {
+  for (let factor = 2; factor < number; factor++)
+    if (number % factor === 0) return false;
+  return true;
+}
+
+// OBJECTS ORIENTED PROGRAMMING
+// CIRCLES
+
+// let radius = 1;
+// let x = 1;
+// let y = 1;
+
+const circle = {
+  radius: 1,
+  location: {
+    x: 1,
+    y: 1,
+  },
+  isVisible: true,
+  draw: function () {
+    console.log("draw");
+  },
+};
+
+// function draw() {} --------Not recommended to declare functions in a standalone format like this!
+// function draw() {} --------Not recommended to declare functions in a standalone format like this!
+
+// circle.draw(); // Method (refer as draw method not function)
+
+// FACTORY AND CONSTRUCTOR FUNCTIONS
+
+// FACTORY FUNCTIONS (uses Camel Notation --> oneTwoThreeFour)
+
+function createCircle(radius) {
+  return {
+    radius,
+
+    draw() {
+      console.log("draw");
+    },
+  };
+}
+
+const circle1 = createCircle(1);
+console.log(circle1);
+
+const circle2 = createCircle(2);
+console.log(circle2);
+
+// CONSTRUCTOR FUNCTIONS (uses Pascal Notation --> OneTwoThreeFour)
