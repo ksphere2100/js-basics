@@ -1,19 +1,19 @@
-let x = 10;
+// let x = 10;
 
 // Relational
-console.log(x < 3);
-console.log(x <= 12);
-console.log(x > 3);
-console.log(x <= 3);
+// console.log(x < 3);
+// console.log(x <= 12);
+// console.log(x > 3);
+// console.log(x <= 3);
 
-// Equality
-// Strict Eqaulity Operator
-console.log(x === 3);
-console.log(x !== 3);
+// // Equality
+// // Strict Eqaulity Operator
+// console.log(x === 3);
+// console.log(x !== 3);
 
-// Loose Equality Operator
-console.log(x == 3);
-console.log(3 == 3);
+// // Loose Equality Operator
+// console.log(x == 3);
+// console.log(3 == 3);
 
 console.log(1 === 1);
 console.log("1" === 1);
@@ -412,17 +412,17 @@ function isPrime(number) {
 // let x = 1;
 // let y = 1;
 
-const circle = {
-  radius: 1,
-  location: {
-    x: 1,
-    y: 1,
-  },
-  isVisible: true,
-  draw: function () {
-    console.log("draw");
-  },
-};
+// const circle = {
+//   radius: 1,
+//   location: {
+//     x: 1,
+//     y: 1,
+//   },
+//   isVisible: true,
+//   draw: function () {
+//     console.log("draw");
+//   },
+// };
 
 // function draw() {} --------Not recommended to declare functions in a standalone format like this!
 // function draw() {} --------Not recommended to declare functions in a standalone format like this!
@@ -450,3 +450,63 @@ const circle2 = createCircle(2);
 console.log(circle2);
 
 // CONSTRUCTOR FUNCTIONS (uses Pascal Notation --> OneTwoThreeFour)
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+} // Circle is an object eg. Circle.length
+
+// const Circle3 = new Function(
+//   "radius",
+//   `this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   }`
+// );
+
+// const circle = new Circle3(1);
+
+// const circle = new Circle(1);
+// const x = {};
+
+// const circle = {
+//   radius: 1,
+// };
+
+// circle.color = "yellow";
+// circle.draw = function () {};
+
+// delete circle.color;
+// delete circle.draw;
+
+// console.log(circle);
+
+// Constructor Properties
+
+const another = new Circle(1);
+
+new String(); // '', "", ``...
+new Boolean(); // true, false
+new Number(); // , 2, 3, ...
+
+Circle.call({}, 1);
+Circle.apply({}, [1, 2, 3]);
+
+// VALUE TYPES
+// - number
+// - string
+// - boolean
+// - symbol
+// - undefined
+// - null
+
+// REFERENCE TYPES
+// - object
+// - function
+// - array
+
+let x = 10;
+// let y = x;
+
+// x = 20;
